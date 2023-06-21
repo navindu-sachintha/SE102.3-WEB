@@ -1,9 +1,16 @@
-function fact(n){
-    if (n <= 1) {
-        return 1;
-    }
+function validateForm(){
+    let name = document.getElementById('username').value;
+    let pass = document.getElementById('pass').checked;
 
-    return n * fact(n - 1)
+
+    if(name == "" && pass == "" && pass.length < 8){
+        window.alert("Plaese check atleast value");
+    }
+    else{
+        window.alert("Form submitted successfully")
+    }
 }
 
-fact(5);
+function resetForm() {
+    document.getElementById('form2').reset();
+  }

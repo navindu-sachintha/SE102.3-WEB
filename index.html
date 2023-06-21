@@ -6,9 +6,49 @@
 
   <link rel="stylesheet" href="./css/styles.css">
   <title>Document</title>
+  <script>
+    function validateForm(){
+    let name = document.getElementById('username').value;
+    let pass = document.getElementById('pass').value;
+    let gen = document.getElementsByName('name');
+    console.log(gen)
+
+    if(document.getElementsByName('gender').checked){
+      alert("Please check atleast one gender.")
+    }
+    if(isNaN(pass)){
+      alert("Password is only contains number");
+    }
+    if(name == "" && pass == "" && pass.length < 8){
+        window.alert("Plaese check the values");
+    }
+    else{
+        window.alert("Form submitted successfully")
+    }
+}
+
+function resetForm() {
+    document.getElementById('form2').reset();
+  }
+  </script>
 </head>
 <body>
-  <form action="" name="t"></form>
-  <script src="./js/script.js"></script>
+  <form action="" name="form2">
+    <fieldset>
+      <label for="username">Username: </label>
+      <input type="text" name="username" id="username"><br>
+      <label for="pass">Password: </label>
+      <input type="password" name="password" id="pass"><br>
+      <label for="gender">Gender</label>
+      <input type="radio" name="name" id="m" value="m">M 
+      <input type="radio" name="name" id="f" value="f">F <br><br>
+      <label for=""></label><br>
+      <input type="checkbox" name="" id="">
+      <input type="checkbox" name="" id=""><br><br> 
+      <button type="submit" onclick="validateForm()">Sumbit</button>
+      <button type="reset" onclick="resetForm()">Reset</button>
+    </fieldset>
+  </form>
+  <!--<script src="./js/script.js"></script>-->
 </body>
 </html>
